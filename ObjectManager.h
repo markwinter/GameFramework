@@ -2,7 +2,7 @@
 //
 // A manager to store game objects to easily call the Update() and
 // Draw() methods on the objects. It has delayed adding and removing of objects,
-// so they are only added/removed at the start of the subsequent frame.
+// so they are only added/removed at the start of the subsequent UpdateAll() call.
 
 #ifndef OBJECT_MANAGER_H_
 #define OBJECT_MANAGER_H_
@@ -31,7 +31,7 @@ class ObjectManager {
   void RemoveDeleted();
   void AddInserted();
 
-  int vector_size_;
+  int vector_size_ = 100;
 };
 
 #endif

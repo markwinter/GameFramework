@@ -27,3 +27,7 @@ int GameObject::GetObjectManagerIndex() {
 void GameObject::SetObjectManagerIndex(int n) {
   object_manager_index_ = n;
 }
+
+sf::Sprite GameObject::GetSprite() {
+  return sprite_;
+}

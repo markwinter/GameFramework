@@ -9,11 +9,11 @@
 class GameState {
  public:
   GameState();
-  ~GameState();
+  virtual ~GameState();
 
-  void Draw(sf::RenderWindow& window, int32_t);
-  void Update(int32_t);
-  void HandleInput();
+  virtual void Draw(sf::RenderWindow&, int32_t);
+  virtual void Update(int32_t);
+  virtual void HandleInput();
 };
 
 #endif

@@ -16,7 +16,7 @@ class GameLoop {
 
  private:
 
-  GameState state_;
+  GameState* state_;
 
   sf::RenderWindow main_window_;
 

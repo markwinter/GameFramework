@@ -9,7 +9,9 @@ ObjectManager::ObjectManager() {
 }
 
 ObjectManager::~ObjectManager() {
-
+  game_objects_.clear();
+  objects_marked_for_deletion_.clear();
+  objects_to_be_inserted_.clear();
 }
 
 void ObjectManager::Add(std::unique_ptr<GameObject> object) {
@@ -23,7 +25,7 @@ void ObjectManager::AddInserted() {
 
   for (auto& obj : objects_to_be_inserted_) {
     game_objects_.push_back(std::move(obj));
-    obj->SetObjectManagerIndex(game_objects_.size() - 1);
+    game_objects_.back()->SetObjectManagerIndex(game_objects_.size() - 1);
   }
   
   objects_to_be_inserted_.clear();
