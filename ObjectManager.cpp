@@ -38,8 +38,11 @@ void ObjectManager::Remove(int index) {
 void ObjectManager::RemoveDeleted() {
   for (int index : objects_marked_for_deletion_) {
     // If object isn't already object at end of vector, then swap it to the back
-    if (index != game_objects_.size() - 1)
+    if (index != game_objects_.size() - 1) {
       std::swap(game_objects_[index], game_objects_.back());
+      // Update index for the object that was moved from the back
+      game_objects_[index]->SetObjectManagerIndex(index);
+    }
 
     // Now remove the back object (unique_ptr handles freeing the memory)
     game_objects_.pop_back();

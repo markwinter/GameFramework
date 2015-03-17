@@ -21,7 +21,7 @@ class ExampleState : public GameState {
 
  private:
   ObjectManager object_manager_;
-  AudioCache* audio_cache_;
+  AudioCache audio_cache_;
 };
 
 #endif
