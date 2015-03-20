@@ -20,7 +20,7 @@ class ExampleState : public GameState {
   void HandleInput() override;
 
  private:
-  ObjectManager object_manager_;
+  ObjectManager<GameObject> object_manager_;
   AudioCache audio_cache_;
 };
 
