@@ -2,7 +2,7 @@
 #include "ExampleObject.h"
 
 ExampleObject::ExampleObject() {
-  Load("images/exampleobject.png");
+  Load("images/example.png");
   GetSprite().setPosition(300, 300);
   GetSprite().scale(2, 2);
 }

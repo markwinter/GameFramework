@@ -14,15 +14,15 @@ class AudioCache {
   // GetSound() uses sf::SoundBuffer internally which is better for small audio files such
   // as a short attacking sound, or gun shot. sf::SoundBuffer needs to be loaded into 
   // an sf::Sound to actually be played
-  sf::SoundBuffer* GetSound(std::string);
+  std::shared_ptr<sf::SoundBuffer> GetSound(std::string);
 
   // GetSong() uses sf::Music internally which is better for large audio files as it 
   // is streamed from the file rather than loaded into memory
-  sf::Music* GetSong(std::string);
+  std::shared_ptr<sf::Music> GetSong(std::string);
 
  private:
-  std::unordered_map<std::string, sf::SoundBuffer*> sounds_;
-  std::unordered_map<std::string, sf::Music*> songs_;
+  std::unordered_map<std::string, std::shared_ptr<sf::SoundBuffer>> sounds_;
+  std::unordered_map<std::string, std::shared_ptr<sf::Music>> songs_;
 };
 
 #endif
