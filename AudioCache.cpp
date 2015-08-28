@@ -4,14 +4,14 @@
 AudioCache::AudioCache() {}
 
 AudioCache::~AudioCache() {
-  songs_.clear();
+  music_.clear();
   sounds_.clear();
 }
 
-std::shared_ptr<sf::Music> AudioCache::GetSong(std::string name) {
-  auto itr = songs_.find(name);
+std::shared_ptr<sf::Music> AudioCache::GetMusic(std::string name) {
+  auto itr = music_.find(name);
 
-  if (itr == songs_.end()) {
+  if (itr == music_.end()) {
     std::shared_ptr<sf::Music> song = std::make_shared<sf::Music>();
 
     if (!song->openFromFile(name)) {
@@ -19,14 +19,14 @@ std::shared_ptr<sf::Music> AudioCache::GetSong(std::string name) {
       return nullptr;
     }
 
-    songs_.insert(std::pair<std::string, std::shared_ptr<sf::Music>>(name, song));
+    music_.insert(std::pair<std::string, std::shared_ptr<sf::Music>>(name, song));
     return song;
   }
 
   return itr->second;
 }
 
-std::shared_ptr<sf::SoundBuffer> AudioCache::GetSound(std::string name) {
+std::shared_ptr<sf::SoundBuffer> AudioCache::GetSoundBuffer(std::string name) {
   auto itr = sounds_.find(name);
 
   if (itr == sounds_.end()) {
