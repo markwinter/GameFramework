@@ -3,7 +3,7 @@
 
 ExampleState::ExampleState() {
   // Create an example object to display on screen
-  std::unique_ptr<ExampleObject> player(new ExampleObject());
+  std::unique_ptr<ExampleObject> player = std::make_unique<ExampleObject>();
   object_manager_.Add(std::move(player));
 
   // SFML will play audio in a seperate thread so we dont have to worry about that

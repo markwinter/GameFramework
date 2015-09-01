@@ -3,37 +3,37 @@
 #include "ExampleState.h"
 
 GameLoop::GameLoop() {
-  // Create a window
-  //int w = sf::VideoMode().getDesktopMode().width;
-  //int h = sf::VideoMode().getDesktopMode().height;
-  int w = 800;
-  int h = 600;
-  main_window_.create(sf::VideoMode(w, h), "My Game");
-  main_window_.setVerticalSyncEnabled(true);
-
-  // Set current state to Example one
-  state_ = new ExampleState();
+  // Set current state to an example state
+  std::unique_ptr<GameState> example_state = std::make_unique<ExampleState>();
+  state_stack_.push(std::move(example_state));
 }
 
 GameLoop::~GameLoop() {
 
 }
 
-void GameLoop::Loop() {  
-  while (main_window_.isOpen()) { 
+void GameLoop::Loop(sf::RenderWindow& main_window) {  
+  while (main_window.isOpen()) { 
     int32_t frame_time = game_clock_.restart().asMilliseconds();
 
     // Poll the window events
     sf::Event event;
-    while (main_window_.pollEvent(event));
+    while (main_window.pollEvent(event)) {
+      if (event.type == sf::Event::Closed)
+        main_window.close();
+    }
 
     // Clear the window
-    main_window_.clear(sf::Color(0, 0, 0));
+    main_window.clear(sf::Color(0, 0, 0));
 
-    state_->HandleInput();
-    state_->Update(frame_time);
-    state_->Draw(main_window_, frame_time);
+    state_stack_.top()->HandleInput();
+    state_stack_.top()->Update(frame_time);
+    state_stack_.top()->Draw(main_window, frame_time);
 
-    main_window_.display();
+    main_window.display();
   }
+
+  // Empty the state stack which will also delete the unique ptrs
+  while (!state_stack_.empty())
+    state_stack_.pop();
 }

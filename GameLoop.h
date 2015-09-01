@@ -6,20 +6,18 @@
 #define GAME_LOOP_H_
 
 #include "GameState.h"
+#include <stack>
 
 class GameLoop {
  public:
   GameLoop();
   ~GameLoop();
 
-  void Loop();
+  void Loop(sf::RenderWindow& main_window);
 
  private:
-
-  GameState* state_;
-
-  sf::RenderWindow main_window_;
-
+  // Might be better to use a set rather than a stack
+  std::stack<std::unique_ptr<GameState>> state_stack_;
   sf::Clock game_clock_;
 };
 
