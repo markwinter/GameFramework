@@ -6,13 +6,7 @@ ExampleState::ExampleState() {
   std::unique_ptr<ExampleObject> player = std::make_unique<ExampleObject>();
   object_manager_.Add(std::move(player));
 
-  // SFML will play audio in a seperate thread so we dont have to worry about that
-  // and just play the song 
-  auto song = audio_cache_.GetMusic("sounds/example.flac");
-  if (song != nullptr) {
-    song->setLoop(true);
-    song->play();
-  }
+  audio_manager_.PlayBackgroundMusic("sounds/example.flac");
 }
 
 ExampleState::~ExampleState() {

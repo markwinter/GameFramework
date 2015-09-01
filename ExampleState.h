@@ -8,7 +8,7 @@
 #include "GameState.h"
 #include "ObjectManager.h"
 #include "ExampleObject.h"
-#include "AudioCache.h"
+#include "AudioManager.h"
 
 class ExampleState : public GameState {
  public:
@@ -21,7 +21,7 @@ class ExampleState : public GameState {
 
  private:
   ObjectManager<GameObject> object_manager_;
-  AudioCache audio_cache_;
+  AudioManager audio_manager_;
 };
 
 #endif
