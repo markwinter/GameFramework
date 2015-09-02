@@ -12,6 +12,11 @@ AudioManager::~AudioManager() {
 
 void AudioManager::PlayBackgroundMusic(std::string file_name) {
   current_background_music_ = audio_cache_.GetMusic(file_name);
+
+  // Could be nullptr if failed to open music from disk
+  if (!current_background_music_)
+    return;
+
   current_background_music_->setLoop(true);
   current_background_music_->play();
 }
@@ -22,6 +27,11 @@ void AudioManager::StopBackgroundMusic() {
 
 void AudioManager::PlaySound(std::string file_name) {
   auto buffer = audio_cache_.GetSoundBuffer(file_name).get();
+
+  // Could be nullptr if failed to load sound into memory from disk
+  if (!buffer)
+    return;
+
   sf::Sound new_sound;
   new_sound.setBuffer(*buffer);
 
