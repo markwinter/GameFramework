@@ -8,15 +8,11 @@ The idea is that you can just git clone this repo and get started straight away 
 
 ###### AudioManager
 
-Allows the playing of audio easily and eventually helpful functions such as transitioning between background music. Uses the audio cache internally.
-
-###### AudioCache
-
-Contains two unordered_maps for caching audio using the sf::Music and sf::SoundBuffer classes from SFML.
+Allows the playing of audio easily and in the future, helpful functions such as transitioning between background music. Uses a cache of sf::SoundBuffer internally.
 
 ###### Cache
 
-Template for creating caches e.g. texture cache
+Template for creating caches e.g. audio cache, texture cache.
 
 ###### Example classes
 
