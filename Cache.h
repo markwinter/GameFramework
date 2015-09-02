@@ -6,14 +6,18 @@
 template <typename T>
 class Cache {
  public:
-  Cache();
   ~Cache();
-
+  
   std::shared_ptr<T> Load(std::string);
 
  private:
   std::unordered_map<std::string, std::shared_ptr<T>> items_;
 };
+
+template <typename T>
+inline Cache<T>::~Cache() {
+  items_.clear();
+}
 
 template <typename T>
 inline std::shared_ptr<T> Cache<T>::Load(std::string file_name) {

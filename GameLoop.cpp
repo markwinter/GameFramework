@@ -23,7 +23,6 @@ void GameLoop::Loop(sf::RenderWindow& main_window) {
         main_window.close();
     }
 
-    // Clear the window
     main_window.clear(sf::Color(0, 0, 0));
 
     state_stack_.top()->HandleInput();
