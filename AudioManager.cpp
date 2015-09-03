@@ -13,9 +13,11 @@ AudioManager::~AudioManager() {
 void AudioManager::PlayBackgroundMusic(std::string file_name) {
   // Dont use caching for sf::Music as its streamed from file instead of loaded into memory
   current_background_music_ = std::make_unique<sf::Music>();
-  current_background_music_->openFromFile(file_name);
-  current_background_music_->setLoop(true);
-  current_background_music_->play();
+  
+  if (current_background_music_->openFromFile(file_name)) {
+    current_background_music_->setLoop(true);
+    current_background_music_->play();
+  }
 }
 
 void AudioManager::StopBackgroundMusic() {

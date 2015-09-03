@@ -4,6 +4,8 @@ An SFML C++11/14 game framework that can be used as a starting point for roughly
 
 The idea is that you can just git clone this repo and get started straight away on making a game with all of the bare essentials done already.
 
+I have attempted to stick to [Google's C++ Style Guide](https://google-styleguide.googlecode.com/svn/trunk/cppguide.html)
+
 ### What Is What (alphabetical)
 
 ###### AudioManager

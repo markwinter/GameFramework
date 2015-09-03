@@ -18,7 +18,6 @@ class GameLoop {
  private:
   // Might be better to use a set rather than a stack
   std::stack<std::unique_ptr<GameState>> state_stack_;
-  sf::Clock game_clock_;
 };
 
 #endif
