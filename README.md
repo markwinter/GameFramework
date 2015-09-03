@@ -16,6 +16,10 @@ Allows the playing of audio easily and in the future, helpful functions such as 
 
 Template for creating caches e.g. audio cache, texture cache.
 
+###### Engine
+
+Top layer wrapper that sets up the window, calls the game loop, etc.
+
 ###### Example classes
 
 Included in this repo is a couple of example classes, ExampleState and ExampleObject, so that you can see how the code should be used. Feel free to delete these.
@@ -34,7 +38,7 @@ A plain game object class that you should inherit from to create your player, ai
 
 ###### MyGame
 
-This is the starting point and simply calls the game loop
+This is the starting point and simply calls Run() on the Engine class
 
 ###### ObjectManager
 
