@@ -1,10 +1,16 @@
 #include "stdafx.h"
 #include "ExampleState.h"
+#include <iostream>
 
 ExampleState::ExampleState() {
-  // Create an example object to display on screen
-  std::unique_ptr<ExampleObject> player = std::make_unique<ExampleObject>();
-  object_manager_.Add(std::move(player));
+  // Create a bunch of sprites for testing
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 4; j++) {
+      std::unique_ptr<ExampleObject> object = std::make_unique<ExampleObject>();
+      object->GetSprite().setPosition(i*150, j*100);
+      object_manager_.Add(std::move(object));
+    }
+  }
 
   audio_manager_.PlayBackgroundMusic("sounds/example.flac");
 }

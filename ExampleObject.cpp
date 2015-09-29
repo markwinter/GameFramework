@@ -3,8 +3,6 @@
 
 ExampleObject::ExampleObject() {
   Load("images/example.png");
-  GetSprite().setPosition(300, 300);
-  GetSprite().scale(2, 2);
 }
 
 ExampleObject::~ExampleObject() {}
