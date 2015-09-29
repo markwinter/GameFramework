@@ -9,7 +9,7 @@ class AudioManager {
   ~AudioManager();
 
   void PlayBackgroundMusic(std::string);
-  void StopBackgroundMusic();
+  void StopBackgroundMusic() const;
 
   void PlaySound(std::string);
   void StopAllSounds();

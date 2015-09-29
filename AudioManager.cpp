@@ -20,7 +20,7 @@ void AudioManager::PlayBackgroundMusic(std::string file_name) {
   }
 }
 
-void AudioManager::StopBackgroundMusic() {
+void AudioManager::StopBackgroundMusic() const {
   current_background_music_->stop();
 }
 
