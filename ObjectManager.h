@@ -8,9 +8,10 @@
 #define OBJECT_MANAGER_H_
 
 #include "GameObject.h"
+#include "QuadTree.h"
 
 class ObjectManager {
- public:
+public:
   ObjectManager();
   ~ObjectManager();
 
@@ -20,7 +21,7 @@ class ObjectManager {
   void UpdateAll(int32_t);
   void DrawAll(sf::RenderWindow&, int32_t);
 
- private:
+private:
   // Vector to store game objects
   std::vector<std::unique_ptr<GameObject>> game_objects_;
 
@@ -33,6 +34,8 @@ class ObjectManager {
 
   // Should tweak this number based on the game
   int vector_size_ = 100;
+
+  QuadTree quadtree_;
 };
 
 #endif

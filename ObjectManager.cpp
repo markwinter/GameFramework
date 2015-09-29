@@ -24,6 +24,7 @@ void ObjectManager::AddInserted() {
     game_objects_.reserve(game_objects_.capacity() * 2);
 
   for (auto& obj : objects_to_be_inserted_) {
+    quadtree_.Insert(*obj);
     game_objects_.push_back(std::move(obj));
     game_objects_.back()->SetObjectManagerIndex(game_objects_.size() - 1);
   }
@@ -45,6 +46,7 @@ void ObjectManager::RemoveDeleted() {
     }
 
     // Now remove the back object (unique_ptr handles freeing the memory)
+    quadtree_.Remove(*game_objects_.back());
     game_objects_.pop_back();
   }
 
