@@ -15,9 +15,9 @@ class GameObject {
   virtual void Update(int32_t);
   virtual void Draw(sf::RenderWindow&, int32_t);
 
-  sf::Sprite GetSprite();
+  sf::Sprite& GetSprite();
 
-  int GetObjectManagerIndex();
+  int GetObjectManagerIndex() const;
   void SetObjectManagerIndex(int);
 
  private:

@@ -20,7 +20,7 @@ void GameObject::Draw(sf::RenderWindow& window, int32_t dt) {
   window.draw(sprite_);
 }
 
-int GameObject::GetObjectManagerIndex() {
+int GameObject::GetObjectManagerIndex() const {
   return object_manager_index_;
 }
 
@@ -28,6 +28,6 @@ void GameObject::SetObjectManagerIndex(int n) {
   object_manager_index_ = n;
 }
 
-sf::Sprite GameObject::GetSprite() {
+sf::Sprite& GameObject::GetSprite() {
   return sprite_;
 }
