@@ -22,7 +22,7 @@ void GameLoop::Loop(sf::RenderWindow& main_window) {
 
   sf::Clock game_clock_;
   int32_t frame_time = 0;
-  double fps = 0;
+  int fps = 0;
 
   while (main_window.isOpen()) { 
     frame_time = game_clock_.restart().asMilliseconds();
