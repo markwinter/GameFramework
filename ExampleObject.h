@@ -6,11 +6,10 @@
 #define EXAMPLE_OBJECT_H_
 
 #include "GameObject.h"
-#include "Cache.h"
 
 class ExampleObject : public GameObject {
  public:
-  ExampleObject(Cache<sf::Texture>&);
+  ExampleObject();
   ~ExampleObject() override;
 
   void Update(int32_t) override;

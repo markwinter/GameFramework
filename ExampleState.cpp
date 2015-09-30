@@ -6,7 +6,7 @@ ExampleState::ExampleState() {
   // Create a bunch of sprites for testing
   for (int i = 0; i < 5; i++) {
     for (int j = 0; j < 4; j++) {
-      std::unique_ptr<ExampleObject> object = std::make_unique<ExampleObject>(texture_cache_);
+      std::unique_ptr<ExampleObject> object = std::make_unique<ExampleObject>();
       object->GetSprite().setPosition(i*150, j*100);
       object_manager_.Add(std::move(object));
     }
