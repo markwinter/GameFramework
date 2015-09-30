@@ -38,7 +38,6 @@ void AnimationHandler::Update(int last_time) {
     texture_bounds_ = rect;
   }
 
-  // Increment time
   elapsed_time_ += last_time;
 
   if (elapsed_time_ > duration * animations_[current_animation_].GetLength())

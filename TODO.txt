@@ -1,4 +1,6 @@
+- Make animations better
+- Add animation example
 - Collision detection
 - AudioManager should take SFML max instances into account
-- state stack should have a max amount
-- Change to entity-component based system
+- State stack should have a max amount
+- Change to entity-component based system for objects (Prefer composition over inheritance)
