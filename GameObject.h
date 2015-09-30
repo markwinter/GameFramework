@@ -6,12 +6,9 @@
 #ifndef GAME_OBJECT_H_
 #define GAME_OBJECT_H_
 
-#include "Cache.h"
-
 class GameObject {
  public:
   GameObject();
-  GameObject(Cache<sf::Texture>&);
   virtual ~GameObject();
 
   virtual void Load(std::string);
@@ -25,7 +22,7 @@ class GameObject {
 
  private:
   sf::Sprite sprite_;
-  Cache<sf::Texture> texture_cache_;
+  sf::Texture texture_;
 
   int object_manager_index_;
 };

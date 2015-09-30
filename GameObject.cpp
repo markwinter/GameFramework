@@ -1,14 +1,17 @@
 #include "stdafx.h"
 #include "GameObject.h"
 
-GameObject::GameObject() {}
+GameObject::GameObject() {
 
-GameObject::GameObject(Cache<sf::Texture>& cache) : texture_cache_(cache) {}
+}
 
-GameObject::~GameObject() {}
+GameObject::~GameObject() {
+
+}
 
 void GameObject::Load(std::string file_name) {
-  sprite_.setTexture(*texture_cache_.Load(file_name));
+  texture_.loadFromFile(file_name);
+  sprite_.setTexture(texture_);
 }
 
 void GameObject::Update(int32_t dt) {}
