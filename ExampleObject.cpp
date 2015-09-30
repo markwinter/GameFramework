@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "ExampleObject.h"
 
-ExampleObject::ExampleObject() {
+ExampleObject::ExampleObject(Cache<sf::Texture>& cache) {
   Load("images/example.png");
 }
 
