@@ -1,5 +1,3 @@
-- Implement texture caching
-- Animations
 - Collision detection
 - AudioManager should take SFML max instances into account
 - state stack should have a max amount
