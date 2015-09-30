@@ -11,10 +11,11 @@ class AnimationHandler {
   void AddAnimationFrame(AnimationFrame& animation);
   void ChangeCurrentFrame(int);
   void Update(int);
-
-  sf::IntRect texture_bounds_;
+  inline sf::IntRect GetTextureBounds() { return texture_bounds_; }
+  
 
  private:
+  sf::IntRect texture_bounds_;
   std::vector<sf::IntRect> texture_sizes_;
   std::vector<AnimationFrame> animations_;
   float elapsed_time_;

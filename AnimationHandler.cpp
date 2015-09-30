@@ -27,14 +27,9 @@ void AnimationHandler::Update(int last_time) {
     frame %= animations_[current_animation_].GetLength();
 
     // Set the new sprite for this frame
-    // Needs changing based on spritesheet used
+    // Assumes spritesheet is only one horizontal line, and no gaps between sprite bounds
     sf::IntRect rect = texture_sizes_[current_animation_];
-
-    if (frame == 0)
-      rect.left = (rect.width * frame);
-    else
-      rect.left = frame * 5 + (rect.width * frame);
-
+    rect.left = (rect.width * frame);
     texture_bounds_ = rect;
   }
 
