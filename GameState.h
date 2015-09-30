@@ -6,6 +6,8 @@
 #ifndef GAME_STATE_H_
 #define GAME_STATE_H_
 
+#include "Cache.h"
+
 class GameState {
  public:
   GameState();
@@ -14,6 +16,9 @@ class GameState {
   virtual void Draw(sf::RenderWindow&, int32_t);
   virtual void Update(int32_t);
   virtual void HandleInput();
+
+ protected:
+  Cache<sf::Texture> texture_cache_;
 };
 
 #endif
