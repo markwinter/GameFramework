@@ -1,25 +1,29 @@
 #ifndef ANIMATION_HANDLER_H_
 #define ANIMATION_HANDLER_H_
 
-#include "AnimationFrame.h"
+#include "Animation.h"
 
 class AnimationHandler {
  public:
   AnimationHandler(std::vector<sf::IntRect>);
   ~AnimationHandler();
 
-  void AddAnimationFrame(AnimationFrame& animation);
+  void AddAnimation(Animation& animation);
   void ChangeCurrentFrame(int);
   void Update(int);
-  inline sf::IntRect GetTextureBounds() { return texture_bounds_; }
-  
 
+  inline void StopAnimating() { is_animating_ = false; }
+  inline void StartAnimating() { is_animating_ = true; }
+
+  inline sf::IntRect GetTextureBounds() const { return texture_bounds_; }
+  
  private:
   sf::IntRect texture_bounds_;
   std::vector<sf::IntRect> texture_sizes_;
-  std::vector<AnimationFrame> animations_;
-  float elapsed_time_;
+  std::vector<Animation> animations_;
+  float animation_elapsed_time_;
   int current_animation_;
+  bool is_animating_;
 };
 
 #endif
