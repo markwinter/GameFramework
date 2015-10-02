@@ -5,7 +5,7 @@
 
 class AnimationHandler {
  public:
-  AnimationHandler(std::vector<sf::IntRect>);
+  AnimationHandler();
   ~AnimationHandler();
 
   void AddAnimation(Animation& animation);
@@ -19,7 +19,6 @@ class AnimationHandler {
   
  private:
   sf::IntRect texture_bounds_;
-  std::vector<sf::IntRect> texture_sizes_;
   std::vector<Animation> animations_;
   float animation_elapsed_time_;
   int current_animation_;

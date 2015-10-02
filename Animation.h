@@ -3,13 +3,15 @@
 
 class Animation {
  public:
-  Animation(int, float);
+  Animation(int, float, sf::IntRect);
   ~Animation();
 
-  inline int GetLength() { return num_of_frames_; }
+  inline sf::IntRect GetTextureSize() { return texture_size_; }
+  inline int GetNumberOfFrames() { return num_of_frames_; }
   inline int GetFrameDuration() { return frame_duration_; }
 
  private:
+  sf::IntRect texture_size_;
   int num_of_frames_;
   float frame_duration_;
 };
