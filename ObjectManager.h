@@ -11,7 +11,7 @@
 #include "QuadTree.h"
 
 class ObjectManager {
-public:
+ public:
   ObjectManager();
   ~ObjectManager();
 
@@ -21,7 +21,7 @@ public:
   void UpdateAll(int32_t);
   void DrawAll(sf::RenderWindow&, int32_t);
 
-private:
+ private:
   // Vector to store game objects
   std::vector<std::unique_ptr<GameObject>> game_objects_;
 
