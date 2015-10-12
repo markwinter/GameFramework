@@ -6,6 +6,16 @@ The idea is that you can just git clone this repo and get started straight away 
 
 I have attempted to stick to [Google's C++ Style Guide](https://google-styleguide.googlecode.com/svn/trunk/cppguide.html)
 
+### TODO
+
+- Add an animation example
+- Collision detection using the quadtree and simple brute-force
+- AudioManager should take SFML max instances into account
+- Add function to AudioManager to transition nicely between background music
+- State stack should have a max amount
+- Change to entity-component based system for game objects (Prefer composition over inheritance). More flexible and will reduce code duplication later on.
+- Add World/Map/Tiling (Add support for Tiled Map Editor formats?)
+
 ### What Is What (alphabetical)
 
 ###### AnimationFrame

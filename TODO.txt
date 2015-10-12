@@ -1,6 +1,0 @@
-- Add animation example
-- Collision detection
-- AudioManager should take SFML max instances into account
-- State stack should have a max amount
-- Change to entity-component based system for game objects (Prefer composition over inheritance)
-- Add World/Map/Tiling (Add support for Tiled Map Editor formats?)
